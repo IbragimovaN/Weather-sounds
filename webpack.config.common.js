@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ESLintPlugin = require("eslint-webpack-plugin");
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
@@ -33,6 +34,7 @@ module.exports = {
       ],
     }),
     new MiniCssExtractPlugin(),
+    new ESLintPlugin(),
   ],
   module: {
     rules: [
@@ -50,6 +52,14 @@ module.exports = {
           loader: "svg-url-loader",
         },
       },
+      {
+        test: /\.(js)$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"],
+      },
     ],
+  },
+  resolve: {
+    extensions: ["*", ".js"],
   },
 };
