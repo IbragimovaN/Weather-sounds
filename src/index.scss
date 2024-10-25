@@ -2,8 +2,66 @@
   font-family: "Roboto";
   src: url("./fonts/Roboto-Regular.ttf") format("truetype");
 }
-
-.text {
-  color: pink;
+body,
+h1,
+div {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
   font-family: "Roboto", sans-serif;
+  position: relative;
+  backdrop-filter: blur(2px);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+
+  h1 {
+    font-size: 40px;
+  }
+  img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .btnWrapper {
+    height: 150px;
+    width: 550px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    button {
+      width: 150px;
+      height: 150px;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      background-size: cover;
+    }
+  }
+}
+.rainy {
+  background: url("assets/images/rainy-bg.jpg");
+  background-size: cover;
+}
+.summer {
+  background-image: url("assets/images/summer-bg.jpg");
+  background-size: cover;
+}
+.winter {
+  background-image: url("assets/images/winter-bg.jpg");
+  background-size: cover;
+}
+.rainyColor {
+  color: #fff;
+}
+
+.summerColor {
+  color: orangered;
+}
+.winterColor {
+  color: #0f5ad2;
 }
