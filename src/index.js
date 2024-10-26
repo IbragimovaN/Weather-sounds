@@ -5,6 +5,7 @@ import snowIcon from "./assets/icons/cloud-snow.svg";
 import rainSound from "./assets/sounds/rain.mp3";
 import sunSound from "./assets/sounds/summer.mp3";
 import snowSound from "./assets/sounds/winter.mp3";
+import { createButton } from "./createBtn";
 
 const body = document.querySelector("body");
 const h1 = document.querySelector("h1");
@@ -52,17 +53,6 @@ const clickFunc = (type) => {
   soundsFunc(type);
 };
 
-const createButton = (type, icon) => {
-  const newBtn = document.createElement("button");
-  newBtn.className = type;
-  newBtn.id = type;
-  const image = document.createElement("img");
-  image.src = icon;
-  image.id = type;
-  newBtn.appendChild(image);
-  btnWrapper.appendChild(newBtn);
-};
-
 btnWrapper.addEventListener("click", (event) => {
   event.target.id && clickFunc(event.target.id);
 });
@@ -72,6 +62,6 @@ volumeСontrol.addEventListener("input", (e) => {
   currentSound.volume = e.target.value;
 });
 
-createButton("rainy", rainIcon);
-createButton("summer", sunIcon);
-createButton("winter", snowIcon);
+createButton("rainy", rainIcon, btnWrapper);
+createButton("summer", sunIcon, btnWrapper);
+createButton("winter", snowIcon, btnWrapper);
