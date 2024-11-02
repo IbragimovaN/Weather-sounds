@@ -1,6 +1,8 @@
-export let currentSound = null;
+import { Weather } from "./data";
 
-export const onClickBtn = (dataArr, h1, id) => {
+export let currentSound: HTMLAudioElement | null = null;
+
+export const onClickBtn = (dataArr: Weather[], h1: HTMLElement, id: string) => {
   dataArr.map((item) => {
     if (item.name === id) {
       item.installBg();
