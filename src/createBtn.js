@@ -1,10 +1,10 @@
-export const createButton = (type, icon, btnWrapper) => {
+export const createButton = (obj, wrapper) => {
   const newBtn = document.createElement("button");
-  newBtn.className = type;
-  newBtn.id = type;
+  newBtn.className = obj.class;
+  newBtn.id = obj.class;
   const image = document.createElement("img");
-  image.src = icon;
-  image.id = type;
+  image.src = obj.icon;
+  image.id = obj.class;
   newBtn.appendChild(image);
-  btnWrapper.appendChild(newBtn);
+  wrapper.appendChild(newBtn);
 };
