@@ -1,4 +1,6 @@
-export const createButton = (obj, wrapper) => {
+import { Weather } from "./data";
+
+export const createButton = (obj: Weather, wrapper: HTMLElement) => {
   const newBtn = document.createElement("button");
   newBtn.className = obj.name;
   newBtn.id = obj.name;
