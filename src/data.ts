@@ -10,8 +10,18 @@ import sunBg from "./assets/images/summer-bg.jpg";
 import rainBg from "./assets/images/rainy-bg.jpg";
 import snowBg from "./assets/images/winter-bg.jpg";
 
-class Weather {
-  constructor(name, icon, bgImage, sound) {
+export class Weather {
+  name: string;
+  icon: string;
+  bgImage: string;
+  sound: HTMLAudioElement;
+
+  constructor(
+    name: string,
+    icon: string,
+    bgImage: string,
+    sound: HTMLAudioElement
+  ) {
     this.name = name;
     this.icon = icon;
     this.bgImage = bgImage;
@@ -26,4 +36,4 @@ const rainObj = new Weather("rainy", rainIcon, rainBg, new Audio(rainSound));
 const summerObj = new Weather("summer", sunIcon, sunBg, new Audio(sunSound));
 const winterObj = new Weather("winter", snowIcon, snowBg, new Audio(snowSound));
 
-export const dataArr = [rainObj, summerObj, winterObj];
+export const dataArr: Weather[] = [rainObj, summerObj, winterObj];
