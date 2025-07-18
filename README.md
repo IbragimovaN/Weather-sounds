@@ -26,17 +26,21 @@
 
 ## Установка и запуск
 
-```bash
+
 # Установка зависимостей
+```bash
 npm install
-
+```
 # Запуск dev-сервера (с hot reload)
+```bash
 npm run start
-
+```
 # Production сборка
+```bash
 npm run build
-
-# Development сборка (без оптимизаций)
+```
+# Development сборка 
+```bash
 npm run build:dev
 ```
 
